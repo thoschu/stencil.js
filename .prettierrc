@@ -1,0 +1,12 @@
+{
+  "semi": false,
+  "plugins": [],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.css"],
+      "options": {
+        "semi": true
+      }
+    }
+  ]
+}

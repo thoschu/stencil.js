@@ -1,0 +1,15 @@
+:host {
+  display: block;
+
+  .header-card {
+    border: red solid 3px;
+  }
+
+  .main-card {
+    border: green solid 3px;
+  }
+
+  .footer-card {
+    border: blue solid 3px;
+  }
+}
