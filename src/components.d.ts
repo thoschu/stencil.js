@@ -5,74 +5,67 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Options } from "./components/canvas-component/canvas-component";
+export { Options } from "./components/canvas-component/canvas-component";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface TestComponent {
-        "email": string;
-        "name": string;
-    }
+  interface CanvasComponent {
+    /**
+     * The config property for canvas generation config
+     */
+    config: Options;
+    /**
+     * The copy property for activate copy to clipboad
+     */
+    copy: boolean;
+    /**
+     * Public API to get content during runtime
+     */
+    get: (
+      type?: "canvas" | "image",
+    ) => Promise<string | HTMLImageElement | HTMLCanvasElement>;
+    /**
+     * The type property for image type
+     */
+    type: "canvas" | "image";
+  }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLTestComponentElement extends Components.TestComponent, HTMLStencilElement {
-    }
-    var HTMLTestComponentElement: {
-        prototype: HTMLTestComponentElement;
-        new (): HTMLTestComponentElement;
-    };
-    interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "test-component": HTMLTestComponentElement;
-    }
+  interface HTMLCanvasComponentElement
+    extends Components.CanvasComponent,
+      HTMLStencilElement {}
+  var HTMLCanvasComponentElement: {
+    prototype: HTMLCanvasComponentElement;
+    new (): HTMLCanvasComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "canvas-component": HTMLCanvasComponentElement;
+  }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface TestComponent {
-        "email"?: string;
-        "name"?: string;
-    }
-    interface IntrinsicElements {
-        "my-component": MyComponent;
-        "test-component": TestComponent;
-    }
+  interface CanvasComponent {
+    /**
+     * The config property for canvas generation config
+     */
+    config?: Options;
+    /**
+     * The copy property for activate copy to clipboad
+     */
+    copy?: boolean;
+    /**
+     * The type property for image type
+     */
+    type?: "canvas" | "image";
+  }
+  interface IntrinsicElements {
+    "canvas-component": CanvasComponent;
+  }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
-    export namespace JSX {
-        interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "test-component": LocalJSX.TestComponent & JSXBase.HTMLAttributes<HTMLTestComponentElement>;
-        }
+  export namespace JSX {
+    interface IntrinsicElements {
+      "canvas-component": LocalJSX.CanvasComponent &
+        JSXBase.HTMLAttributes<HTMLCanvasComponentElement>;
     }
+  }
 }

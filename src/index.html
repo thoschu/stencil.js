@@ -7,18 +7,62 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
     <title>Stencil Component Starter</title>
+    <script type="module" src="/build/stenciljs.esm.js"></script>
+    <script nomodule src="/build/stenciljs.js"></script>
+    <script defer>
+      const ref = setTimeout(async () => {
+        await customElements.whenDefined("canvas-component")
+        const canvasElement = document.querySelector("canvas-component")
+        const result = await canvasElement.get("image")
 
-    <script type="module" src="/build/test-lib.esm.js"></script>
-    <script nomodule src="/build/test-lib.js"></script>
+        console.info(result)
+        document.body.appendChild(result.cloneNode(true))
+      }, 2000)
+    </script>
   </head>
   <body>
-    <my-component
-      first="Stencil"
-      last="'Don't call me a framework' JS"
-    ></my-component>
-    <test-component name="Tom S." email="thoschulte@gmail.com">
-      <p slot="my-header">Hello</p>
-      <p slot="my-footer">Thanks</p>
-    </test-component>
+    <canvas-component copy="false">
+      <style>
+        @scope {
+          .card {
+            border: 2px solid darkslategrey;
+          }
+
+          img {
+            width: auto;
+            height: auto;
+            border: 3px #333 dashed;
+            border-radius: 50%;
+          }
+
+          .container {
+            padding: 2px 16px;
+            border-top: 1px #333 dashed;
+          }
+
+          h2 {
+            color: blue;
+          }
+
+          p {
+            color: green;
+          }
+        }
+      </style>
+      <div class="card">
+        <img
+          src="https://res.cloudinary.com/dzupkajfz/image/upload/v1727020614/images_cwpe0k.png"
+          alt="Avatar"
+        />
+        <div class="container">
+          <h1>Reusable and scalable component libraries</h1>
+          <p style="color: red">with Stencil.js</p>
+          <h2>
+            <b>by Tom S. - Hamburg © 2024</b>
+          </h2>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+    </canvas-component>
   </body>
 </html>

@@ -16,7 +16,7 @@
     "jsx": "react",
     "jsxFactory": "h",
     "paths": {
-      "@/utils": ["./src/utils/utils.ts"]
+      "@/utils": ["./src/utils/utils"]
     }
   },
   "include": [

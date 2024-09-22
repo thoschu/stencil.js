@@ -1,25 +1,27 @@
-import { Config } from '@stencil/core';
-import { sass } from '@stencil/sass';
-import { postcss } from '@stencil-community/postcss';
-import autoprefixer from 'autoprefixer';
+import { Config } from "@stencil/core";
+import { sass } from "@stencil/sass";
+import { postcss } from "@stencil-community/postcss";
+import autoprefixer from "autoprefixer";
 
 export const config: Config = {
-  namespace: 'test-lib',
+  namespace: "stenciljs",
   outputTargets: [
     {
-      type: 'dist',
-      esmLoaderPath: '../loader',
+      type: "dist",
+      esmLoaderPath: "../loader",
     },
     {
-      type: 'dist-custom-elements',
-      customElementsExportBehavior: 'auto-define-custom-elements',
+      type: "dist-custom-elements",
+      customElementsExportBehavior: "single-export-module",
       externalRuntime: false,
+      isPrimaryPackageOutputTarget: true,
+      generateTypeDeclarations: true,
     },
     {
-      type: 'docs-readme',
+      type: "docs-readme",
     },
     {
-      type: 'www',
+      type: "www",
       serviceWorker: null, // disable service workers
     },
   ],
@@ -29,7 +31,8 @@ export const config: Config = {
   plugins: [
     sass(),
     postcss({
-      plugins: [autoprefixer()]
-    })
-  ]
+      plugins: [autoprefixer()],
+    }),
+  ],
+  validatePrimaryPackageOutputTarget: true,
 };

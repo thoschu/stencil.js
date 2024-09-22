@@ -1,0 +1,87 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+    <script
+      type="module"
+      src="http://localhost:3333/build/stenciljs.esm.js"
+    ></script>
+    <script nomodule src="http://localhost:3333/build/stenciljs.js"></script>
+  </head>
+  <body>
+    <div id="shadowHost">
+      <h1>The template Element</h1>
+      <p>
+        Click the button below to display the hidden content from the template
+        element.
+      </p>
+      <button onclick="showContent()">Show hidden content</button>
+      <template>
+        <h2>Flower</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlPnRal9NWxRQWlJrBgJCfYcbTwoSkBCHe-Q&s"
+          width="214"
+          height="204"
+          alt=""
+        />
+      </template>
+      <script>
+        function showContent() {
+          let temp = document.getElementsByTagName("template")[0]
+          let button = document.getElementsByTagName("button")[0]
+          let clon = temp.content.cloneNode(true)
+          document.body.prepend(clon)
+          button.disabled = true
+        }
+      </script>
+    </div>
+    <hr />
+    <canvas-component copy="true" type="canvas">
+      <style>
+        @scope {
+          .card {
+            transition: 0.3s;
+            width: 40%;
+          }
+
+          img {
+            width: 250px;
+            height: 250px;
+            border: 3px #333 solid;
+            border-radius: 50%;
+          }
+
+          .container {
+            padding: 2px 16px;
+            border: 1px orchid dotted;
+          }
+
+          h4 {
+            color: blue;
+          }
+
+          p {
+            color: red;
+          }
+        }
+      </style>
+      <div class="card">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOuxrvcNMfGLh73uKP1QqYpKoCB0JLXiBMvA&s"
+          alt="Avatar"
+        />
+        <div class="container">
+          <h1>Hello World</h1>
+          <h4><b>John Doe</b></h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+    </canvas-component>
+    <hr />
+  </body>
+</html>
