@@ -1,7 +1,7 @@
 {
   "name": "@thoschu/canvas-web-component",
   "version": "1.0.0",
-  "description": "Web Components made by Stencil.js",
+  "description": "Web Components made by Tom S. with Stencil.js",
   "main": "dist/index.cjs.js",
   "module": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thoschu/stencil.js.git"
+    "url": "git@github.com:thoschu/stencil.js.git"
   },
   "files": [
     "dist/",
@@ -79,6 +79,7 @@
     "**/*.{js,ts,jsx,tsx,css,scss,html}": "npm run prettier:write"
   },
   "author": "Tom S.",
+  "keywords": ["web componet", "stencil.js", "canvas", "shadow DOM", "template", "slot"],
   "bugs": {
     "url": "https://github.com/thoschu/stencil.js/issues"
   },
