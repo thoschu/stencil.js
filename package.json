@@ -1,5 +1,5 @@
 {
-  "name": "@thoschu/stencil.js",
+  "name": "canvas-component",
   "version": "0.0.1",
   "description": "Web Components made by Stencil.js",
   "main": "dist/index.cjs.js",
@@ -7,15 +7,15 @@
   "types": "dist/components/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stenciljs/stenciljs.esm.js",
+  "unpkg": "dist/canvas-component/canvas-component.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/stenciljs/stenciljs.esm.js",
-      "require": "./dist/stenciljs/stenciljs.cjs.js"
+      "import": "./dist/canvas-component/canvas-component.esm.js",
+      "require": "./dist/canvas-component/canvas-component.cjs.js"
     },
     "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
+      "import": "./dist/components/canvas-component.js",
+      "types": "./dist/components/canvas-component.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",
@@ -26,7 +26,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/thoschu/stencil.js.git"
-  },  "files": [
+  },
+  "files": [
     "dist/",
     "loader/"
   ],
@@ -46,6 +47,7 @@
     "clean": "npx concurrently 'npx rimraf dist' 'npx rimraf loader' 'npx rimraf www' 'npx rimraf .stencil' 'npx rimraf node_modules'",
     "surf": "npx http-server ./private",
     "surf:src": "npx http-server ./src",
+    "surf:www": "npx http-server ./www",
     "docker:verdaccio": "docker run -it --rm --name verdaccio -p 4873:4873 -d verdaccio/verdaccio",
     "prepare": "husky"
   },
@@ -72,9 +74,6 @@
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "ramda": "^0.30.1"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:4873"
   },
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx,css,scss,html}": "npm run prettier:write"

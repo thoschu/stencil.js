@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property | Attribute | Description                                      | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Default                    |
@@ -10,9 +11,12 @@
 | `copy`   | `copy`    | The copy property for activate copy to clipboad  | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `false`                    |
 | `type`   | `type`    | The type property for image type                 | `"canvas" \| "image"`                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `null`                     |
 
+
 ## Methods
 
 ### `get(type?: "canvas" | "image") => Promise<string | HTMLImageElement | HTMLCanvasElement>`
+
+Public API to get content during runtime
 
 #### Parameters
 
@@ -24,6 +28,9 @@
 
 Type: `Promise<string | HTMLCanvasElement | HTMLImageElement>`
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
