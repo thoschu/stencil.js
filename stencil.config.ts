@@ -4,7 +4,7 @@ import { postcss } from "@stencil-community/postcss";
 import autoprefixer from "autoprefixer";
 
 export const config: Config = {
-  namespace: "canvas-component",
+  namespace: "canvas-web-component",
   outputTargets: [
     {
       type: "dist",
