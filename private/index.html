@@ -9,9 +9,11 @@
     <title>Stencil Component Starter</title>
     <script
       type="module"
-      src="http://localhost:3333/build/stenciljs.esm.js"
+      src="https://unpkg.com/@thoschu/canvas-web-component@1.1.1/dist/canvas-web-component/canvas-web-component.esm.js"
     ></script>
-    <script nomodule src="http://localhost:3333/build/stenciljs.js"></script>
+    <!--    <script-->
+    <!--      src="https://unpkg.com/browse/@thoschu/canvas-web-component@1.1.1/dist/esm/canvas-web-component.js"-->
+    <!--    ></script>-->
   </head>
   <body>
     <div id="shadowHost">
@@ -45,7 +47,6 @@
       <style>
         @scope {
           .card {
-            transition: 0.3s;
             width: 40%;
           }
 
@@ -58,7 +59,7 @@
 
           .container {
             padding: 2px 16px;
-            border: 1px orchid dotted;
+            border: 1px greenyellow dotted;
           }
 
           h4 {
