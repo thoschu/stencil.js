@@ -1,21 +1,21 @@
 {
   "name": "@thoschu/canvas-web-component",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "Web Components made by Tom S. with Stencil.js",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.js",
   "module": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/canvas-component/canvas-component.esm.js",
+  "unpkg": "dist/canvas-web-component/canvas-web-component.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/canvas-component/canvas-component.esm.js",
-      "require": "./dist/canvas-component/canvas-component.cjs.js"
+      "import": "./dist/canvas-web-component/canvas-web-component.esm.js",
+      "require": "./dist/canvas-web-component/canvas-web-component.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/canvas-component.js",
-      "types": "./dist/components/canvas-component.d.ts"
+    "./canvas-web-component": {
+      "import": "./dist/components/canvas-web-component.js",
+      "types": "./dist/components/canvas-web-component.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",
@@ -44,7 +44,9 @@
     "prettier:write": "prettier --write --ignore-unknown src",
     "prepublish": "npm run build",
     "publish": "npm publish --access public",
-    "clean": "npx concurrently 'npx rimraf dist' 'npx rimraf loader' 'npx rimraf www' 'npx rimraf .stencil' 'npx rimraf node_modules'",
+    "unpublish": "npm unpublish",
+    "cleanup": "npx concurrently 'npx rimraf dist' 'npx rimraf loader' 'npx rimraf www' 'npx rimraf .stencil'",
+    "clean:node_modules": "npx rimraf node_modules",
     "surf": "npx http-server ./private",
     "surf:src": "npx http-server ./src",
     "surf:www": "npx http-server ./www",
@@ -55,7 +57,6 @@
     "@eslint/eslintrc": "^3.1.0",
     "@stencil-community/eslint-plugin": "^0.8.0",
     "@stencil-community/postcss": "^2.2.0",
-    "@stencil/core": "^4.7.0",
     "@stencil/sass": "^3.0.12",
     "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^29.5.6",
@@ -71,6 +72,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@stencil/core": "^4.7.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
     "ramda": "^0.30.1"
