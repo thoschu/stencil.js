@@ -40,17 +40,21 @@ npm install canvas-component
 
 ### Using unpkg
 
+**https://stenciljs.com/docs/publishing**
+
 If you prefer not to use npm, you can include the component directly from a CDN like **unpkg**.
 For example, include the following script in your HTML:
 
+> https://unpkg.com/browse/@thoschu/canvas-web-component@1.1.1/
+
 ```html
-<script type="module" src="https://unpkg.com/stencil-components/dist/stencil-components/my-stencil-components.esm.js"></script>
+<script type="module" src="https://unpkg.com/@thoschu/canvas-web-component@1.0.1/dist/canvas-web-component/canvas-web-component.esm.js"></script>
 ```
 
 For browsers that don't support ES modules, use the following fallback:
 
 ```html
-<script nomodule src="https://unpkg.com/stencil-components/dist/stencil-components/my-stencil-components.js"></script>
+<script nomodule src="https://unpkg.com/browse/@thoschu/canvas-web-component"></script>
 ```
 
 This allows you to use the components directly in your HTML pages without the need for any installation.
